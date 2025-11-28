@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Banco Imobiliário Bus Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Banco Imobiliário – Bus</h1>
+      <div id="me-info"></div>
+      <div id="turno-info"></div>
+    </header>
+
+    <main>
+        <div id="modal-propriedades" class="modal hidden">
+            <div class="modal-content">
+                <h2>Suas Propriedades</h2>
+                <div id="lista-propriedades"></div>
+                <button onclick="fecharModalPropriedades()">Fechar</button>
+            </div>
+        </div>
+
+        <div id="modal-info-casa" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="info-casa-nome"></h2>
+                <p id="info-casa-desc"></p>
+                <div id="info-casa-extras"></div>
+                <button onclick="fecharModalInfoCasa()">Fechar</button>
+            </div>
+        </div>
+
+
+
+        <div id="modal-casa" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="modal-titulo"></h2>
+                <p id="modal-descricao"></p>
+                <div id="modal-botoes"></div>
+            </div>
+        </div>
+
+
+        <div id="dice-modal" class="dice-modal hidden">
+        <div class="dice-wrapper">
+
+            <div class="dice" id="dice1">
+            <span class="face front">1</span>
+            <span class="face back">6</span>
+            <span class="face right">3</span>
+            <span class="face left">4</span>
+            <span class="face top">5</span>
+            <span class="face bottom">2</span>
+            </div>
+
+            <div class="dice" id="dice2">
+            <span class="face front">1</span>
+            <span class="face back">6</span>
+            <span class="face right">3</span>
+            <span class="face left">4</span>
+            <span class="face top">5</span>
+            <span class="face bottom">2</span>
+            </div>
+
+        </div>
+        </div>
+
+
+      <section id="acoes">
+        <button id="btn-roll">🎲 Rolar dado</button>
+        <button id="btn-buy">🏠 Comprar propriedade</button>
+        <button id="btn-end-turn">➡️ Encerrar turno</button>
+        <button id="btn-propriedades">📜 Minhas Propriedades</button>
+      </section>
+
+      <section id="transfer">
+        <h2>Transferir dinheiro</h2>
+        <select id="destino-select"></select>
+        <input type="number" id="valor-transfer" placeholder="Valor" />
+        <button id="btn-transfer">💸 Transferir</button>
+      </section>
+
+      <section id="board">
+        <h2>Tabuleiro</h2>
+        <div id="board-grid" class="board-grid"></div>
+      </section>
+
+
+      <section id="players">
+        <h2>Jogadores</h2>
+        <div id="players-list"></div>
+      </section>
+
+      <section id="log">
+        <h2>Log</h2>
+        <ul id="log-list"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
